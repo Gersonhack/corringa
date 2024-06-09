@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/page1.css">
+    <title>placard</title>
+    <style>
+        .dialog-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .dialog {
+            background: #1e1e1e; /* Fundo escuro para o diálogo */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra suave */
+        }
+
+        .dialog h2 {
+            color: #00d2ff; /* Azul ciano */
+        }
+
+        .dialog p {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .dialog button {
+            background-color: #ff4e50; /* Vermelho coral */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dialog button:hover {
+            background-color: #fc3c3f; /* Tom mais escuro de vermelho coral */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog-overlay" id="dialogOverlay">
+        <div class="dialog">
+            <h2>Não perca nenhuma atualização!</h2>
+            <p>Para receber as últimas atualizações do bot, siga nosso canal no YouTube.</p>
+            <button onclick="closeDialog()">Fechar</button>
+            <button onclick="redirectToYouTube()">Seguir Agora</button>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="time-square">
+            <p id="currentTime"></p>
+        </div>
+        <div class="info-square">
+            <p id="randomInfo"></p>
+        </div>
+        <div class="random-time-square">
+            <p id="randomTime"></p>
+        </div>
+        <div class="site-url-square">
+            <p><span id="siteUrl"></span></p>
+        </div>
+        <button id="backBtn">Exit</button>
+    </div>
+
+    <iframe src="https://media1.placard.co.mz/redirect.aspx?pid=3338&bid=1690" frameborder="0" width="1000%" height="calc(1000% - 05px)"></iframe>
+Hack fullstack...
+    
+        <script async="" src="js/adsbygoogle.js" crossorigin="anonymous"></script>
+    
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var randomTimeElement = document.getElementById("randomTime");
+
+            if (randomTimeElement.innerHTML === "[object HTMLParagraphElement]") {
+                randomTimeElement.innerHTML = "Aguarde pela entrada";
+            }
+
+            // Abre o diálogo automaticamente após um tempo (por exemplo, 30 segundos)
+            setTimeout(openDialog, 30000);
+        });
+
+        function openDialog() {
+            var dialogOverlay = document.getElementById("dialogOverlay");
+            dialogOverlay.style.display = "flex";
+        }
+
+        function closeDialog() {
+            var dialogOverlay = document.getElementById("dialogOverlay");
+            dialogOverlay.style.display = "none";
+        }
+
+        function redirectToYouTube() {
+            window.location.href = "https://www.youtube.com/@hackerbets"; // Substitua com o link do seu canal
+        }
+    </script>
+
+    <script src="js/page2.js"></script>
+
+
+</body></html>

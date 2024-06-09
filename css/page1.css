@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #121212; /* Fundo escuro */
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* Texto branco */
+}
+
+.toolbar {
+    background-image: linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%); /* Gradiente azul ciano */
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+button {
+    background-image: linear-gradient( 135deg, #FF7AF5 10%, #513162 100%); /* Vermelho coral */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #fc3c3f; /* Tom mais escuro de vermelho coral */
+    transform: scale(1.05);
+}
+
+.time-square,
+.info-square,
+.random-time-square {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px black; /* Sombra suave */
+}
+
+.time-square {
+    background-image: linear-gradient( 135deg, #FFCF71 10%, #2376DD 100%);; /* Azul turquesa */
+}
+
+.info-square {
+    background-color: #2a363b; /* Azul escuro acinzentado */
+}
+.random-time-square {
+   background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);; /* Laranja pastel */
+    /* Adiciona uma animação de piscar */
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#currentTime,
+#randomInfo {
+    margin: 0;
+}
+
+iframe {
+    position: absolute;
+    top: 80px; /* Altura da barra de ferramentas */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Subtrai a altura da barra de ferramentas */
+    border: none;
+}
+
+#backBtn {
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5); /* Gradiente azul ciano */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#backBtn:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    top: 50%;
+    left: -15px;
+    transition: transform 0.3s;
+    opacity: 0;
+}
+
+#backBtn:hover {
+    background: linear-gradient(45deg, #3a7bd5, #00d2ff); /* Gradiente azul ciano invertido */
+}
+
+#backBtn:hover:before {
+    transform: translate(-2px, -2px) rotate(-45deg);
+    opacity: 1;
+}
