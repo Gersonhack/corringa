@@ -1155,7 +1155,7 @@ marquee{
     // Detectar o tipo de dispositivo e aplicar estilos específicos
     if (/Android/i.test(navigator.userAgent)) {
     // Se for um dispositivo Android
-    document.querySelector('.iframe').style.width = '120%'; // Largura de 100% para Android
+    document.querySelector('.iframe').style.width = '150%'; // Largura de 100% para Android
     document.querySelector('.iframe').style.height = '200px'; // Altura específica para Android
     } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
     // Se for um dispositivo iOS (iPhone, iPad, iPod)
@@ -1170,7 +1170,7 @@ marquee{
 
 
 <div class="iframe">
-    <iframe width="100%" height="687" src="https://media1.placard.co.mz/redirect.aspx?pid=3338&bid=1690" style="border: none; border-radius: 5px;"></iframe>    
+    <iframe width="100%" height="687" src="https://media1.placard.co.mz/redirect.aspx?pid=3338&bid=1690" style="border: none; border-radius: 5px;"></iframe> 
 
 
 
@@ -1446,7 +1446,7 @@ margin-bottom: 200px;
     .iframe {
         position: relative;
     width: 100%;
-    height: 295;
+    height: 295px;
     margin-top: 150px;
    bottom: 30px; 
    padding-bottom: 90%; /* Proporção de 16:9 (Ajuste de acordo com a proporção desejada) */
@@ -1458,9 +1458,9 @@ margin-bottom: 200px;
 .iframe iframe {
     position: absolute;
    top: -140px;
-  margin-left: 122px;
-    width: 118%;
-    height: 97%;
+  margin-left: 115px;
+    width: 123%;
+    height: 200%;
   
     }
       
