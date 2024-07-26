@@ -704,7 +704,7 @@ mark{
 	
 <div class="d-grid gap-2">
   <button class="btn btn-primary" type="button" onclick="ola()">olabet</button>
-  <button class="btn btn-primary" type="button" onclick="mm()">bot mines</button>
+  <button class="btn btn-primary" type="button" id="openAlert">bot mines</button>
   
 </div>
 
@@ -927,6 +927,21 @@ mark{
 	        setTimeout(function() {
 	          openChatButtn.style.display = "none";
 	        }, 5000);
+	      });
+	    </script>
+	    <script>
+	      document.getElementById('openAlert').addEventListener('click', function() {
+	        // Abrir o Sweet Alert com botões e texto
+	        Swal.fire({
+	          icon: 'info',
+	          title: 'Escolha a casa de apostas',
+	          html: `
+	                <button class="btn btn-primary" onclick="location.href='/mines/el.html'">elephant</button>
+	                <button class="btn btn-primary" onclick="location.href='/mines/m.html'">olabet</button>
+	                <br> <br>
+	                <button class="btn btn-primary" onclick="location.href='/mines/p.html'">placard</button>
+	              `
+	        });
 	      });
 	    </script>
 </body>
