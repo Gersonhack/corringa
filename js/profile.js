@@ -43,3 +43,6 @@ function ola() {
 function su() {
   window.location.href = "https://wa.me/message/TIAJR4FTZAPFP1"
 }
+function mm(){
+  window.location.href="mines/m.html"
+}
