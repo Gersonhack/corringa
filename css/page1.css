@@ -1,4 +1,4 @@
-body {
+  body {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -8,16 +8,27 @@ body {
 }
 
 .toolbar {
-    background-image: linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%); /* Gradiente azul ciano */
-    padding: 10px;
+    background-image: linear-gradient(to top,  #323343 0%, #2A2C41 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+   
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+ 
 }
 
+
 button {
-    background-image: linear-gradient( 135deg, #FF7AF5 10%, #513162 100%); /* Vermelho coral */
+    background-color: #ff4e50; /* Vermelho coral */
     color: #fff;
     border: none;
     cursor: pointer;
@@ -44,14 +55,24 @@ button:hover {
 }
 
 .time-square {
-    background-image: linear-gradient( 135deg, #FFCF71 10%, #2376DD 100%);; /* Azul turquesa */
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(1px);
+    
+ 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); /* Azul turquesa */
 }
 
 .info-square {
     background-color: #2a363b; /* Azul escuro acinzentado */
 }
 .random-time-square {
-   background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);; /* Laranja pastel */
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+  
+    
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); /* Laranja pastel */
     /* Adiciona uma animação de piscar */
     animation: blink 1s infinite;
 }
@@ -72,7 +93,7 @@ button:hover {
 
 iframe {
     position: absolute;
-    top: 80px; /* Altura da barra de ferramentas */
+    top: 125px; /* Altura da barra de ferramentas */
     left: 0;
     width: 100%;
     height: calc(100% - 50px); /* Subtrai a altura da barra de ferramentas */
@@ -80,9 +101,14 @@ iframe {
 }
 
 #backBtn {
-    background: linear-gradient(45deg, #00d2ff, #3a7bd5); /* Gradiente azul ciano */
-    color: #fff;
-    border: none;
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+  
+   
+    border: 1px solid red;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); /* Gradiente azul ciano */
+    color:white;
+    
     border-radius: 5px;
     padding: 8px 15px;
     cursor: pointer;
@@ -114,3 +140,52 @@ iframe {
     transform: translate(-2px, -2px) rotate(-45deg);
     opacity: 1;
 }
+
+
+ 
+    
+        .dialog-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .dialog {
+            background: #1e1e1e; /* Fundo escuro para o diálogo */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra suave */
+        }
+
+        .dialog h2 {
+            color: #00d2ff; /* Azul ciano */
+        }
+
+        .dialog p {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .dialog button {
+            background-color: #ff4e50; /* Vermelho coral */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dialog button:hover {
+            background-color: #fc3c3f; /* Tom mais escuro de vermelho coral */
+            transform: scale(1.05);
+        }

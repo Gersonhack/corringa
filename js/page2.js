@@ -16,8 +16,8 @@ backBtn.addEventListener("click", () => {
 // Função para gerar informações aleatórias
 function generateRandomInfo() {
   const randomInfoArray = [
-    '10X', '10X', '2X', '7X', '9X', '2X','3X ', '2X', '2X','3X ', '2X','3X ', '4X', '5X', '4X', '5X', '4X', '5X', 'Rosa',
-    '3X ', '2X', '8X', '6X', '4X', '5X', '2X','3X ', '2X', '2X','3X ', '2X','3X ', '2X','3X ', '2X','3X ', '2X','3X ', 'Rosa', 'Rosa',
+    '10X', '23x', '2X', '7X', '9X', '2X','3X ', '2X', '2X','3X ', '2X','3X ', '4X', '5X', '4X', '17x', '4X', '5X', 'Rosa',
+    '3X', '2X', '13X', '6X', '4X', '5X', '2X','3X ', '2X', '2X','3X ', '2X','3X ', '2X','3X ', '2X','3X ', '2X','3X', 'Rosa', 'Rosa', '3x','1x','3x','4x','1.50x','1x','27x'
   ];
   const randomIndex = Math.floor(Math.random() * randomInfoArray.length);
   return randomInfoArray[randomIndex];
@@ -65,3 +65,12 @@ setInterval(updateRandomInfo, 60000);
 setInterval(updateRandomTimeAndInfo, 60000); // 2 minutos em milissegundos
 
 
+const pre_carremento = document.querySelector("div.pre-carregamento");
+
+function preCarregamento() {
+  pre_carremento.style.opacity = "0";
+
+  setTimeout(() => {
+    pre_carremento.style.display = "none";
+  }, 1000);
+}

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 function gr(){
-  alert('redicionamento para placard')
+
   window.location.href="plac.html"
 }
 
@@ -28,5 +28,18 @@ function erro(){
 }
 function rt(){
   window.location.href="eleph.html"
-alert('redicionamento para elephantbet')
+
+}
+function c(){
+  window.location.href="co.html"
+}
+function y(){
+  window.location.href="https://whatsapp.com/channel/0029VafTMfTLCoWzRGeJxt11"
+}
+
+function ola() {
+  window.location.href = "ola.html"
+}
+function su() {
+  window.location.href = "https://wa.me/message/TIAJR4FTZAPFP1"
 }
