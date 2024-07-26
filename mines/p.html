@@ -300,7 +300,7 @@ button:hover{
     
 
   </head><body><div class="texto-branco">
-   Mines
+  mines
 </div>
           <button  onclick="ff()">voltar</button>
     <!--Grmatrix🤧⚠️🤧-->
@@ -706,7 +706,7 @@ border-radius: 27px;
                         </div>
                     </div>
                               
-                    <marquee>mines</marquee>
+                    <marquee>placard</marquee>
                     
                           
                         
@@ -1153,7 +1153,15 @@ marquee{
 
 <script>
     // Detectar o tipo de dispositivo e aplicar estilos específicos
-    
+    if (/Android/i.test(navigator.userAgent)) {
+    // Se for um dispositivo Android
+    document.querySelector('.iframe').style.width = '120%'; // Largura de 100% para Android
+    document.querySelector('.iframe').style.height = '200px'; // Altura específica para Android
+    } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // Se for um dispositivo iOS (iPhone, iPad, iPod)
+    document.querySelector('.iframe').style.width = '125%'; // Largura de 100% para iOS
+    document.querySelector('.iframe').style.height = '200px'; // Altura específica para iOS
+    }
     </script>
 
 
@@ -1205,7 +1213,7 @@ marquee{
                 /* Estilos para telas menores, como celulares */
                 .containerabaixo1 {
                     height: 13px;
-                    width: 200%;
+                    width: 108%;
                     padding: 15px;
                     position:relative;
                    margin-left: -28px;
@@ -1457,6 +1465,7 @@ margin-bottom: 200px;
     }
       
 }
+
 
 </style>
 
