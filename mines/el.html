@@ -232,6 +232,7 @@
             padding: 20px;
             border-radius: 5px;
             z-index: 9999;
+           
         }
 
         .notification-message {
@@ -245,12 +246,18 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+           
         }
-
+#notification-icon{
+  color: #00FEA5;
+  border-radius: 30px;
+  
+}
         .notification-icon-item {
             font-size: 24px;
             margin: 0 10px;
             color: #fff;
+            
             cursor: pointer;
         }
 
@@ -302,8 +309,7 @@ button:hover{
   </head><body><div class="texto-branco">
    Mines
 </div>
-          <button  onclick="ff()">voltar</button>
-    <!--Grmatrix🤧⚠️🤧-->
+
 
     <div id="header">
         <a href="">
@@ -316,9 +322,14 @@ button:hover{
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
 </svg></button>
         </a>
-<svg     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
-  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" id="notification-icon"/>
-</svg>
+<button class="yu" id="notification-icon" >
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-house-exclamation-fill" viewBox="0 0 16 16">
+    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+    <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z" />
+    <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 1 0 1 0V11a.5.5 0 0 0-.5-.5m0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+  </svg>
+
+</button>
          
         <p style="color:transparent">3</p>
     </div>
@@ -330,13 +341,14 @@ button:hover{
    <!-- Conteúdo do container de notificação -->
    <div class="notification-container" id="notification-container">
     <div id="notification-header">
-        <i class="fas fa-arrow-left" id="notification-back-button"></i>
         
        
 <a href="#" class="" id="notification-profile-button">
             
             
-<button class="profile-icon"><i class="fas fa-user"></i></button>
+<button class="profile-icon"><i class="fas fa-user"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-broadcast-pin" viewBox="0 0 16 16">
+  <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707m2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708m5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708m2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM6 8a2 2 0 1 1 2.5 1.937V15.5a.5.5 0 0 1-1 0V9.937A2 2 0 0 1 6 8" />
+</svg></button>
         </a>
         
        
@@ -369,18 +381,19 @@ button:hover{
     
     <div class="line"></div> <!-- Linha no topo da página -->
     <div class="texto-branco1">
-        <h3>Notificação</h3>
+        <h3>elephant bet</h3>
      </div>
 </div>
     <div class="notification-content">
         <a class="notification-icon-item fas fa-bell-slash" style="font-size: 30px;"></a>
+
              <button id="notification-back-button" onclick="closeNotification()">X</button>
-        <p class="notification-message">Nenhuma notificação no momento. Por favor, volte mais tarde.</p>
+                     <iframe src="https://record.elephantbet.com/_7hmWXa0LJxTKto_EPcZApGNd7ZgqdRLk/1/" frameborder="0" width="1000%" height="calc(1000% - 05px)"></iframe>
     </div>
 </div>
 
     <div class="logout-container" id="logout-container">
-        <a href="#" class="logout-button">Encerrar Sessão</a>
+        <a href="../home.html" class="logout-button">sair</a>
     </div>
     <!--Grmatrix🤧⚠️🤧-->
    
@@ -613,7 +626,7 @@ border-radius: 27px;
 
 <!-- Texto como botão -->
 <div class="text-with-icon">
-    <a href="#" target="_blank" class="custom-icon11">
+    <a href="https://whatsapp.com/channel/0029VafTMfTLCoWzRGeJxt11" target="_blank" class="custom-icon11">
         <span class="text">Clique aqui</span>
     </a>
 </div>
@@ -1418,7 +1431,14 @@ z-index: -1;
 <style>
 
 
-
+iframe {
+    position: absolute;
+    top: 125px; /* Altura da barra de ferramentas */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Subtrai a altura da barra de ferramentas */
+    border: none;
+}
 
 
     /* Estilos gerais para o iframe */
@@ -1430,7 +1450,7 @@ z-index: -1;
 margin-bottom: 200px;
 }
 
-.iframe iframe {
+.iframe ifram {
     position: absolute;
     top: 80px;
     left: -150px;
@@ -1455,7 +1475,7 @@ margin-bottom: 200px;
 }
    
 
-.iframe iframe {
+.iframe ifram {
     position: absolute;
    top: -140px;
   margin-left: 122px;
@@ -2142,7 +2162,7 @@ attachResetButtonClickEventAction2()
     </a>
     
     <a href="" class="custom-button instagram-button">
-        <i class="button-icon fas fa-solid fa-circle-check"></i> <h5>brevimente</h5>
+        <i class="button-icon fas fa-solid fa-circle-check"></i> 
     </a>
     
     <a href="" class="custom-button instagram-button">
@@ -2150,7 +2170,7 @@ attachResetButtonClickEventAction2()
             <div class="button-icon">
                 <i class="fas fa-wifi" style="transform: rotate(-89deg); font-size: 20px; margin-right: -20px; margin-bottom: 12px; margin-top: 14px;"></i>
                 <i class="fas fa-wifi" style="transform: rotate(89deg);font-size: 20px;"></i>
-                <h5>AO VIVO</h5>
+                
             </div>
             
             
@@ -2160,13 +2180,13 @@ attachResetButtonClickEventAction2()
             </a>
     
             <a href="https://whatsapp.com/channel/0029VafTMfTLCoWzRGeJxt11" class="custom-button instagram-button">
-                <i class="button-icon fas fa-earth-americas"></i> <h5>como localizar mines</h5>
+                <i class="button-icon fas fa-earth-americas"></i> 
             </a>
 
 
 
     <a href="https://whatsapp.com/channel/0029VafTMfTLCoWzRGeJxt11" class="custom-button money-button">
-        <i class="button-icon fas fa-star"></i> <h5>suporte</h5>
+        <i class="button-icon fas fa-star"></i> <h5>como localizar mines</h5>
     </a>
 </div>
 

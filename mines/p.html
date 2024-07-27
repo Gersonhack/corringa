@@ -294,7 +294,11 @@ button:hover{
   border:2px solid red;
   
 }
+#notification-icon {
+  color: #00FEA5;
+  border-radius: 30px;
 
+}
     </style> 
   
     
@@ -302,7 +306,7 @@ button:hover{
   </head><body><div class="texto-branco">
   mines
 </div>
-          <button  onclick="ff()">voltar</button>
+       
     <!--Grmatrix🤧⚠️🤧-->
 
     <div id="header">
@@ -316,9 +320,14 @@ button:hover{
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
 </svg></button>
         </a>
-<svg     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
-  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" id="notification-icon"/>
-</svg>
+<button class="yu" id="notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-house-exclamation-fill" viewBox="0 0 16 16">
+    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+    <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z" />
+    <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 1 0 1 0V11a.5.5 0 0 0-.5-.5m0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+  </svg>
+
+</button>
          
         <p style="color:transparent">3</p>
     </div>
@@ -369,18 +378,19 @@ button:hover{
     
     <div class="line"></div> <!-- Linha no topo da página -->
     <div class="texto-branco1">
-        <h3>Notificação</h3>
+        <h3>placard</h3>
      </div>
 </div>
     <div class="notification-content">
         <a class="notification-icon-item fas fa-bell-slash" style="font-size: 30px;"></a>
 
-        <p class="notification-message">Nenhuma notificação no momento. Por favor, volte mais tarde.</p>
+             <button id="notification-back-button" onclick="closeNotification()">X</button>
+                     <iframe src="https://tracking.olabet.co.mz/C.ashx?btag=a_162b_7c_&affid=161&siteid=162&adid=7&c=" frameborder="0" width="1000%" height="calc(1000% - 05px)"></iframe>
     </div>
 </div>
 
     <div class="logout-container" id="logout-container">
-        <a href="#" class="logout-button">Encerrar Sessão</a>
+        <a href="../home.html" class="logout-button">sair</a>
     </div>
     <!--Grmatrix🤧⚠️🤧-->
    
@@ -1418,7 +1428,14 @@ z-index: -1;
 <style>
 
 
-
+iframe {
+    position: absolute;
+    top: 125px; /* Altura da barra de ferramentas */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Subtrai a altura da barra de ferramentas */
+    border: none;
+}
 
 
     /* Estilos gerais para o iframe */
@@ -1430,7 +1447,7 @@ z-index: -1;
 margin-bottom: 200px;
 }
 
-.iframe iframe {
+.iframe ifram {
     position: absolute;
     top: 80px;
     left: -150px;
@@ -1455,7 +1472,7 @@ margin-bottom: 200px;
 }
    
 
-.iframe iframe {
+.iframe ifram {
     position: absolute;
    top: -140px;
   margin-left: 122px;
@@ -2142,7 +2159,7 @@ attachResetButtonClickEventAction2()
     </a>
     
     <a href="" class="custom-button instagram-button">
-        <i class="button-icon fas fa-solid fa-circle-check"></i> <h5>brevimente</h5>
+        <i class="button-icon fas fa-solid fa-circle-check"></i> 
     </a>
     
     <a href="" class="custom-button instagram-button">
@@ -2150,7 +2167,7 @@ attachResetButtonClickEventAction2()
             <div class="button-icon">
                 <i class="fas fa-wifi" style="transform: rotate(-89deg); font-size: 20px; margin-right: -20px; margin-bottom: 12px; margin-top: 14px;"></i>
                 <i class="fas fa-wifi" style="transform: rotate(89deg);font-size: 20px;"></i>
-                <h5>AO VIVO</h5>
+                
             </div>
             
             
@@ -2160,13 +2177,13 @@ attachResetButtonClickEventAction2()
             </a>
     
             <a href="https://whatsapp.com/channel/0029VafTMfTLCoWzRGeJxt11" class="custom-button instagram-button">
-                <i class="button-icon fas fa-earth-americas"></i> <h5>como localizar mines</h5>
+                <i class="button-icon fas fa-earth-americas"></i>
             </a>
 
 
 
     <a href="https://whatsapp.com/channel/0029VafTMfTLCoWzRGeJxt11" class="custom-button money-button">
-        <i class="button-icon fas fa-star"></i> <h5>suporte</h5>
+        <i class="button-icon fas fa-star"></i> <h5>como localizar mines</h5>
     </a>
 </div>
 
