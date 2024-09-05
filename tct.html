@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/page1.css">
+    <title>placard</title>
+    <style>
+        .dialog-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .dialog {
+            background: #1e1e1e; /* Fundo escuro para o diálogo */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra suave */
+        }
+
+        .dialog h2 {
+            color: #00d2ff; /* Azul ciano */
+        }
+
+        .dialog p {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .dialog button {
+            background-color: #ff4e50; /* Vermelho coral */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dialog button:hover {
+            background-color: #fc3c3f; /* Tom mais escuro de vermelho coral */
+            transform: scale(1.05);
+        }
+        img{
+          width: 100%;
+          height: 100px;
+        }
+     
+     mark {
+       position: absolute;
+       top: 20px;
+       color: red;
+       background: #42445A;
+       border: 5px;
+     }
+        
+        div.pre-carregamento{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    
+    background-color: black;
+top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.efeito-carregamento{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+.center-image {
+  width: 95px;
+  height: 95px;
+  align-content: center;
+  
+  display: block;
+  margin: 0 auto;
+  fill: var(--color);
+}
+          @media  (min-width: 980px){
+            
+          .toolbar{
+          display: flex;
+          top:30px;
+          justify-content: center;
+          align-items: center;
+          }
+     .time-square{
+       width: 20%;
+ 
+ 
+ 
+      
+     }
+     .info-square{
+       width:5%;
+   
+       }
+       .random-time-square{
+         width:200%;
+       }
+     }
+          }
+    </style>
+</head>
+<body>
+
+  
+
+
+                
+
+        <div class="random-time-square">
+            <p id="randomTime"></p>
+            
+        </div>
+
+
+   
+
+    <iframe src="https://media1.placard.co.mz/redirect.aspx?pid=3338&bid=1690" frameborder="0" width="1000%" height="calc(1000% - 05px)"></iframe>
+    <br> <br> <br> <br> <br> 
+<img src="hack.png">
+    
+        <script async="" src="js/adsbygoogle.js" crossorigin="anonymous"></script>
+    
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var randomTimeElement = document.getElementById("randomTime");
+
+            if (randomTimeElement.innerHTML === "[object HTMLParagraphElement]") {
+                randomTimeElement.innerHTML = "Aguarde pela entrada";
+            }
+
+            // Abre o diálogo automaticamente após um tempo (por exemplo, 30 segundos)
+            
+        });
+
+        
+    </script>
+
+    <script>
+      
+const randomTimeSquare = document.getElementById("randomTime");
+const generateInfoBtn = document.getElementById("generateInfoBtn");
+const randomInfoDisplay = document.getElementById("randomInfo");
+const backBtn = document.getElementById("backBtn");
+const iframe = document.querySelector("iframe");
+
+// Atualiza o URL do site dentro do iframe quando a navegação ocorre
+
+// Função para gerar informações aleatórias
+function generateRandomInfo() {
+  const randomInfoArray = [
+    '10X', '23x', '2X', '7X', '9X', '2X','3X ', '2X', '2X','3X ', '2X','3X ', '4X', '5X', '4X', '17x', '4X', '5X', 'Rosa',
+    '3X', '2X', '13X', '6X', '4X', '5X', '2X','3X ', '2X', '2X','3X ', '2X','3X ', '2X','3X ', '2X','3X ', '2X','3X', 'Rosa', 'Rosa', '3x','1x','3x','4x','1.50x','1x','27x'
+  ];
+  const randomIndex = Math.floor(Math.random() * randomInfoArray.length);
+  return randomInfoArray[randomIndex];
+}
+
+// Atualiza o horário atual
+function updateCurrentTime() {
+  const currentTime = new Date().toLocaleTimeString();
+  document.getElementById("currentTime").textContent = currentTime;
+}
+const randomTimeDisplay = document.getElementById("randomTime");
+randomTimeDisplay.textContent = randomTime;
+
+
+// Atualiza informações aleatórias
+function updateRandomInfo() {
+  const randomInfo = generateRandomInfo();
+  document.getElementById("randomInfo").textContent = randomInfo;
+}
+
+// Função para gerar um horário aleatório com um intervalo de 2 minutos
+function generateRandomTime() {
+  const currentTime = new Date();
+  const randomSeconds = Math.floor(Math.random() * (180 - 60 + 1) + 60 ); // Número entre 0 e 29
+  currentTime.setSeconds(currentTime.getSeconds() + randomSeconds);
+  return `Entrada: ${currentTime.toLocaleTimeString()}`;
+  
+}
+
+// Atualiza o horário aleatório e as informações a cada 2 minutos
+function updateRandomTimeAndInfo() {
+  const randomTime = generateRandomTime();
+  const randomInfo = generateRandomInfo();
+
+  document.getElementById("randomTime").textContent = randomTime;
+  
+  
+}
+
+// Atualiza o tempo a cada segundo
+setInterval(updateCurrentTime, 60000);
+
+// Atualiza as informações aleatórias a cada 5 segundos
+setInterval(updateRandomInfo, 6000);
+
+// Atualiza o horário aleatório e as informações a cada 2 minutos
+setInterval(updateRandomTimeAndInfo, 60000); // 2 minutos em milissegundos
+
+
+
+    </script>
+
+
+</body></html>
