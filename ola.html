@@ -1,204 +1,159 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/page1.css">
-    <title>ola bet</title>
+    <title>manutenção || coringa</title>
+
+    <!-- Firebase App (versão compatível) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
     <style>
-    
-        .dialog-overlay {
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(310deg,black,#6B6C7D); /* Caminho para sua imagem de fundo */
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
+            height: 100vh;
+            margin: 0;
         }
-
-        .dialog {
-            background: #1e1e1e; /* Fundo escuro para o diálogo */
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra suave */
-        }
-
-        .dialog h2 {
-            color: #00d2ff; /* Azul ciano */
-        }
-
-        .dialog p {
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .dialog button {
-            background-color: #ff4e50; /* Vermelho coral */
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .dialog button:hover {
-            background-color: #fc3c3f; /* Tom mais escuro de vermelho coral */
-            transform: scale(1.05);
-        }
-                img {
-                  width: 100%;
-                  height: 100px;
-                }
-            mark {
-              position: absolute;
-              top: 20px;
-              color: red;
-              background: #42445A;
-              border: 5px;
-            }    
-                
-                div.pre-carregamento{
-    width: 100%;
-    min-height: 100vh;
-    position: fixed;
-    
-    background-color: black;
-top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-    transition: 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* From Uiverse.io by Spacious74 */ 
+.outer {
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  padding: 1px;
+  background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+  position: relative;
 }
 
-div.efeito-carregamento{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-top: 2px solid #007bff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.dot {
+  width: 5px;
+  aspect-ratio: 1;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ffffff;
+  border-radius: 100px;
+  z-index: 2;
+  right: 10%;
+  top: 10%;
+  animation: moveDot 6s linear infinite;
 }
 
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes moveDot {
+  0%,
+  100% {
+    top: 10%;
+    right: 10%;
+  }
+  25% {
+    top: 10%;
+    right: calc(100% - 35px);
+  }
+  50% {
+    top: calc(100% - 30px);
+    right: calc(100% - 35px);
+  }
+  75% {
+    top: calc(100% - 30px);
+    right: 10%;
+  }
 }
 
-
-
-.center-image {
-  width: 95px;
-  height: 95px;
-  align-content: center;
-  
-  display: block;
-  margin: 0 auto;
-  fill: var(--color);
+.card {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  border: solid 1px #202222;
+  background-size: 20px 20px;
+  background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  color: #fff;
 }
-          @media  (min-width: 980px){
-            
-          .toolbar{
-          display: flex;
-          top:30px;
-          justify-content: center;
-          align-items: center;
-          }
-     .time-square{
-       width: 20%;
- 
- 
- 
-      
-     }
-     .info-square{
-       width:5%;
-   
-       }
-       .random-time-square{
-         width:200%;
-       }
-     }
-          }
+.ray {
+  width: 220px;
+  height: 45px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: #c7c7c7;
+  opacity: 0.4;
+  box-shadow: 0 0 50px #fff;
+  filter: blur(10px);
+  transform-origin: 10%;
+  top: 0%;
+  left: 0;
+  transform: rotate(40deg);
+}
+
+.card .text {
+  font-weight: bolder;
+  font-size: 3rem;
+  background: linear-gradient(45deg, #000000 4%, #fff, #000);
+  background-clip: text;
+  color: transparent;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: #2c2c2c;
+}
+.topl {
+  top: 10%;
+  background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
+}
+.bottoml {
+  bottom: 10%;
+}
+.leftl {
+  left: 10%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, #747474 30%, #222424 70%);
+}
+.rightl {
+  right: 10%;
+  width: 1px;
+  height: 100%;
+}
+
+.d{
+  color:#6B6C7D;
+}
     </style>
 </head>
-<body onload="preCarregamento();">
+<body>
 
+<div class="outer">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="ray"></div>
+    <div class="text">manutenção</div>
+    <div class="d">©todos direitos reservados</div>
+    <br> <br> <br>
+  <a href="https://whatsapp.com/channel/0029VafBkqM545uvdFQv5Z3">falar com suporte</a>
+    <div class="line topl"></div>
+    <div class="line leftl"></div>
+    <div class="line bottoml"></div>
+    <div class="line rightl"></div>
+  </div>
+</div>
 
-    <div class="dialog-overlay" id="dialogOverlay">
-        <div class="dialog">
-            <h2>Não perca nenhuma atualização!</h2>
-            <p>Para receber as últimas atualizações do bot, siga nosso canal no YouTube.</p>
-            <button onclick="closeDialog()">Fechar</button>
-            <button onclick="redirectToYouTube()">Seguir Agora</button>
-        </div>
-    </div>
-    <div class="pre-carregamento">
-      <div class="efeito-carregamento"></div>
-
-      
-    </div>
-    <div class="toolbar">
-                       <mark class="r">proteção 1.30x a 1.80x </mark>
-        <div class="time-square">
-            <p id="currentTime"></p>
-        </div>
-        <div class="info-square">
-            <p id="randomInfo"></p>
-        </div>
-        <div class="random-time-square">
-            <p id="randomTime"></p>
-        </div>
-        <div class="site-url-square">
-            <p><span id="siteUrl"></span></p>
-        </div>
-        <button id="backBtn">Exit</button>
-    </div>
-
-    <iframe src="https://tracking.olabet.co.mz/C.ashx?btag=a_162b_7c_&affid=161&siteid=162&adid=7&c=" frameborder="0" width="1000%" height="calc(1000% - 05px)"></iframe>
-    <br> <br> <br> <br> <br>
-    <img src="hack.png">
-    
-        <script async="" src="js/adsbygoogle.js" crossorigin="anonymous"></script>
-    
 
     <script>
-        window.addEventListener("DOMContentLoaded", function () {
-            var randomTimeElement = document.getElementById("randomTime");
-
-            if (randomTimeElement.innerHTML === "[object HTMLParagraphElement]") {
-                randomTimeElement.innerHTML = "Aguarde pela entrada";
-            }
-
-            // Abre o diálogo automaticamente após um tempo (por exemplo, 30 segundos)
-            setTimeout(openDialog, 30000);
-        });
-
-        function openDialog() {
-            var dialogOverlay = document.getElementById("dialogOverlay");
-            dialogOverlay.style.display = "flex";
-        }
-
-        function closeDialog() {
-            var dialogOverlay = document.getElementById("dialogOverlay");
-            dialogOverlay.style.display = "none";
-        }
-
-        function redirectToYouTube() {
-            window.location.href = "https://www.youtube.com/@coringaBot166"; // Substitua com o link do seu canal
-        }
+        // Configuração do Firebase
+        
     </script>
 
-    <script src="js/page2.js"></script>
-
-
-</body></html>
+</body>
+</html>
