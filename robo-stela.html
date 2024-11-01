@@ -17,7 +17,11 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-    
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
     body{
       margin: 0;
     padding: 0;
@@ -56,10 +60,12 @@ border:
 .realize{
   color:white;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.2); 
+  padding-bottom: 1px;
+  margin: 0px;
            
 }
         h5{
-          text-align: center;
+         
           margin-bottom: 0;
           font-family: "Creepster", sans-serif;
          
@@ -74,17 +80,21 @@ border:
         .velanr{
           color:red;
          text-shadow: 1px 1px 1px black
-         
+         margin:0;
         }
                   
         
    
         
-        .vels{font-size:18px;color:#BACCD1;font-family: "Handjet", sans-serif;}
+        .vels{font-size:18px;color:#BACCD1;font-family: "Handjet", sans-serif;
+          margin-bottom: 30%;
+          
+        }
         
         .site{
           font-family: "Handjet", sans-serif;
          color:white;
+         margin: 0;
           
            
         }
@@ -92,7 +102,7 @@ border:
         .prote {
           font-family: "Handjet", sans-serif;
           color:#BACCD1;
-          padding-left: 130px;
+        margin: 0;
         }
         
         h5 {
@@ -128,7 +138,7 @@ border:
   position: absolute;
 
 left:15px;
-margin-top: 40px;
+margin-top: 20px;
 margin-bottom: 20px;
 width: 90%;
 }
@@ -182,13 +192,15 @@ placar do dia
 .vip{
   font-family: "Handjet", sans-serif;
   color:white;
+  margin: 0;
 }
 .vv{
   color: white;
+  margin: 0;
 }
 .vii{
   font-family: "Cormorant", sans-serif;
-  
+  margin: 0;
 }
 .pp{
   font-size:12px;
@@ -353,8 +365,8 @@ border:
             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
           </svg> ${time}</span>
           
-                    <p class="site"><span class="sitet">📲 site w</span>eb:<a href="#"> aviator-web</a><br>
-                    <p class="realize">🔃 realize até duas entradas</p>
+                    <p class="site"><span class="sitet">📲 site w</span>eb:<a href="#"> aviator-web</a>
+
                     
                       <p class="vv">🎰 criar conta: <a href="#">ganhar bônus</a> </p>
                       
@@ -362,10 +374,11 @@ border:
                      os sinais são 100% grátis </p>
                   
                   <span class="prote">🛡️ proteção:</span><i class="velanr"> ${protection[Math.floor(Math.random() * protection.length)]}</i>
-                    </p>
                     
+                  <p>
                     <span class="vels">🛩️ entrada confirmada:</span><i class="velanr"> ${messages[Math.floor(Math.random() * messages.length)]}
                               </i>   
+                       </p>                      <p class="realize">🔃 realize até duas entradas</p>
 <button onclick="rr()" class="btn rr btn-outline-info">🎰 aposte aqui <span class="rrl"></span></button>`;
 
 
@@ -399,7 +412,7 @@ border:
 }
 
             function startChat() {
-                setInterval(generateMessage, Math.floor(Math.random() * 60000) + 60000); // Gera entre 30 a 50 segundos
+                setInterval(generateMessage, Math.floor(Math.random() * 6000) + 6000); // Gera entre 30 a 50 segundos
                 setInterval(generateScore, 30000); // A cada 4 minutos (240 segundos) para o placar
                 generateMessage(); // Gera a primeira mensagem
                 generateScore(); // Mostra o placar inicial
